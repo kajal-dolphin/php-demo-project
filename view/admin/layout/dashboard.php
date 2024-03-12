@@ -1,20 +1,23 @@
 
 <!doctype html>
 <html lang="en" class="minimal-theme">
-    <?php 
-        include('view/admin/layout/head-link.php');
-    ?>
+    <head>
+        <?php 
+            include('./head-link.php');
+        ?>
+        <title>Dashboard</title>
+    </head>
 <body>
     <!--start wrapper-->
     <div class="wrapper">
         <!--start top header-->
         <header class="top-header">
-            <?php include('view/admin/layout/header.php') ?>
+            <?php include('./header.php') ?>
         </header>
         <!--end top header-->
 
         <!--start sidebar -->
-        <?php include('view/admin/layout/sidebaar.php')  ?>
+        <?php include('./sidebaar.php')  ?>
         <!--end sidebar -->
 
         <!--start content-->
@@ -87,7 +90,7 @@
 
     </div>
 
-    <?php include('view/admin/layout/foot-link.php');  ?>
+    <?php include('./foot-link.php');  ?>
 
 </body>
 
