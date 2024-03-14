@@ -5,19 +5,19 @@
     <div class="top-navbar d-none d-xl-block">
         <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">Dashboard</a>
+                <a class="nav-link" href="./dashboard.php">Dashboard</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="app-emailbox.html">Email</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:;">Projects</a>
-            </li>
-            <li class="nav-item d-none d-xxl-block">
-                <a class="nav-link" href="javascript:;">Events</a>
-            </li>
-            <li class="nav-item d-none d-xxl-block">
-                <a class="nav-link" href="app-to-do.html">Todo</a>
+        </ul>
+    </div>
+    <div class="top-navbar-right ms-auto">
+        <ul class="navbar-nav align-items-center">
+            <li>
+                <a class="dropdown-item border rounded" href="../../../controller/admin//auth/logout.php">
+                    <div class="d-flex align-items-center">
+                        <div class="setting-icon"><i class="bi bi-lock-fill"></i></div>
+                        <div class="setting-text ms-3"><span>Logout</span></div>
+                    </div>
+                </a>
             </li>
         </ul>
     </div>

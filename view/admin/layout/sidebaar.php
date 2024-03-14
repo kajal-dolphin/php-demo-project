@@ -12,44 +12,32 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="">
                 <div class="parent-icon"><i class="bi bi-house-door"></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
             </a>
-            <ul>
-                <li> <a href="index.html"><i class="bi bi-arrow-right-short"></i>eCommerce</a>
-                </li>
-                <li> <a href="index2.html"><i class="bi bi-arrow-right-short"></i>Sales</a>
-                </li>
-                <li> <a href="index3.html"><i class="bi bi-arrow-right-short"></i>Analytics</a>
-                </li>
-                <li> <a href="index4.html"><i class="bi bi-arrow-right-short"></i>Project Management</a>
-                </li>
-                <li> <a href="index5.html"><i class="bi bi-arrow-right-short"></i>CMS Dashboard</a>
-                </li>
-            </ul>
         </li>
         <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bi bi-grid"></i>
+            <a href="">
+                <div class="parent-icon"><i class="bi bi-list"></i>
                 </div>
-                <div class="menu-title">Application</div>
+                <div class="menu-title">Brand</div>
             </a>
-            <ul>
-                <li> <a href="app-emailbox.html"><i class="bi bi-arrow-right-short"></i>Email</a>
-                </li>
-                <li> <a href="app-chat-box.html"><i class="bi bi-arrow-right-short"></i>Chat Box</a>
-                </li>
-                <li> <a href="app-file-manager.html"><i class="bi bi-arrow-right-short"></i>File Manager</a>
-                </li>
-                <li> <a href="app-to-do.html"><i class="bi bi-arrow-right-short"></i>Todo List</a>
-                </li>
-                <li> <a href="app-invoice.html"><i class="bi bi-arrow-right-short"></i>Invoice</a>
-                </li>
-                <li> <a href="app-fullcalender.html"><i class="bi bi-arrow-right-short"></i>Calendar</a>
-                </li>
-            </ul>
+        </li>
+        <li>
+            <a href="">
+                <div class="parent-icon"><i class="bi bi-list"></i>
+                </div>
+                <div class="menu-title">Category</div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="parent-icon"><i class="bi bi-list"></i>
+                </div>
+                <div class="menu-title">Product</div>
+            </a>
         </li>
     </ul>
     <!--end navigation-->

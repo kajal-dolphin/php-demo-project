@@ -4,6 +4,10 @@
     <head>
         <?php 
             include('./head-link.php');
+            session_start();
+            if (!isset($_SESSION['id'])) {
+                header("Location: /e_commorce/index.php");
+            }
         ?>
         <title>Dashboard</title>
     </head>
