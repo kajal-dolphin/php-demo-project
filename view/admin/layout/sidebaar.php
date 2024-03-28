@@ -19,7 +19,7 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="../brand/brand.php">
                 <div class="parent-icon"><i class="bi bi-list"></i>
                 </div>
                 <div class="menu-title">Brand</div>

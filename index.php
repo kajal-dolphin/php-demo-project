@@ -114,15 +114,15 @@
                         success: function(response) {
                             if (response == "0") {
                                 window.location.href = 'view/admin/layout/dashboard.php';
-                            }else if(response == "1"){
+                            } else if (response == "1") {
                                 console.log("in 1");
                                 $('#message-container').html('<div class="alert alert-danger">' + "Invalid Credentials !!" + '</div>');
                                 $("#message-container").fadeOut(5000);
-                                window.location.href = './index.php';    
-                            } else if(response == "2"){
+                                window.location.href = './index.php';
+                            } else if (response == "2") {
                                 $('#message-container').html('<div class="alert alert-danger">' + "Either Email or Password is Empty" + '</div>');
                                 $("#message-container").fadeOut(5000);
-                                window.location.href = './index.php'; 
+                                window.location.href = './index.php';
                             }
                         },
                         error: function(xhr, status, error) {

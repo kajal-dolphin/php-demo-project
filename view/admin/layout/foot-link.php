@@ -6,3 +6,7 @@
 <script src="/e_commorce/public/admin/assets/js/app.js"></script>
 <script src="/e_commorce/public/admin/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 <script src="/e_commorce/public/admin/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="/e_commorce/public/admin/assets/js/pace.min.js"></script>
+<script src="/e_commorce/public/admin/assets/js/table-datatable.js"></script>
+<script src="/e_commorce/public/admin/assets/js/app.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
