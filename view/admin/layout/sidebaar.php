@@ -12,7 +12,7 @@
     <!--navigation-->
     <ul class="metismenu" id="menu">
         <li>
-            <a href="">
+            <a href="../layout/dashboard.php">
                 <div class="parent-icon"><i class="bi bi-house-door"></i>
                 </div>
                 <div class="menu-title">Dashboard</div>
@@ -26,14 +26,14 @@
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="../category/category.php">
                 <div class="parent-icon"><i class="bi bi-list"></i>
                 </div>
                 <div class="menu-title">Category</div>
             </a>
         </li>
         <li>
-            <a href="">
+            <a href="../product/product.php">
                 <div class="parent-icon"><i class="bi bi-list"></i>
                 </div>
                 <div class="menu-title">Product</div>

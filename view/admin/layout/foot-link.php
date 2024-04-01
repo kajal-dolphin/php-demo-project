@@ -10,3 +10,6 @@
 <script src="/e_commorce/public/admin/assets/js/table-datatable.js"></script>
 <script src="/e_commorce/public/admin/assets/js/app.js"></script>
 <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script src="/e_commorce/public/admin/assets/js/yearpicker.js"></script>
+<script src="/e_commorce/public/admin/assets/plugins/select2/js/select2.min.js"></script>
+<script src="/e_commorce/public/admin/assets/js/form-select2.js"></script>

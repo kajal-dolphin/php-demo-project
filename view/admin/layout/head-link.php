@@ -10,3 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<link rel="stylesheet" href="/e_commorce/public/admin/assets/css/yearpicker.css" />
+<link href="/e_commorce/public/admin/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+<link href="/e_commorce/public/admin/assets/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />

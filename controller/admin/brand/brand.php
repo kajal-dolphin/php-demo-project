@@ -125,7 +125,7 @@ if(isset($_POST['update_brand'])){
     }
 }
 
-if(isset($_POST['delete_student']))
+if(isset($_POST['delete_brand']))
 {
     $brand_id =  $_POST['brand_id'];
 
