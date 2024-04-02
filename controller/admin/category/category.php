@@ -7,26 +7,40 @@ if(isset($_POST['save_category'])){
         $name = $_POST['name'];
         $brandId = $_POST['brand_id'];
 
-        $sql = "INSERT INTO categories (name,brand_id) VALUES ('{$name}', '{$brandId}')";
-        $query = mysqli_query($connection, $sql);
-        
-        if($query)
+        $existingCategory = "SELECT * FROM categories WHERE brand_id='$brandId' AND name='$name'";
+        $category = mysqli_query($connection, $existingCategory);
+
+        if(mysqli_num_rows($category) > 0)
         {
             $res = [
-                'status' => 200,
-                'message' => 'Category Created Successfully'
+                'status' => 400,
+                'message' => 'Category with same brand already exists!!'
             ];
             echo json_encode($res);
             return;
         }
-        else
-        {
-            $res = [
-                'status' => 500,
-                'message' => 'Category Not Created'
-            ];
-            echo json_encode($res);
-            return;
+        else{
+            $sql = "INSERT INTO categories (name,brand_id) VALUES ('{$name}', '{$brandId}')";
+            $query = mysqli_query($connection, $sql);
+            
+            if($query)
+            {
+                $res = [
+                    'status' => 200,
+                    'message' => 'Category Created Successfully'
+                ];
+                echo json_encode($res);
+                return;
+            }
+            else
+            {
+                $res = [
+                    'status' => 500,
+                    'message' => 'Category Not Created'
+                ];
+                echo json_encode($res);
+                return;
+            }
         }
     }
     else{
@@ -43,7 +57,7 @@ if(isset($_GET['category_id']))
 {
    $category_id = $_GET['category_id'];
 
-   $sql = "SELECT categories.id as category_id, categories.brand_id as brand_id,categories.name as category_name, brands.name as brand_name from categories JOIN brands ON brands.id = categories.brand_id WHERE categories.id='$category_id'";
+   $sql = "SELECT c.id as category_id, c.brand_id as brand_id,c.name as category_name, b.name as brand_name from categories AS c JOIN brands AS b ON b.id = c.brand_id WHERE c.id='$category_id'";
    $query = mysqli_query($connection, $sql);
 
    if(mysqli_num_rows($query) == 1)
