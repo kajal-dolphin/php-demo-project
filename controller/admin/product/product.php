@@ -140,6 +140,7 @@ if(isset($_GET['product_id']))
 }
 
 if(isset($_POST['update_product'])){
+    echo "here"; exit;
     $product_id = $_POST['edit_product_id'];
     $name = $_POST['name'];
     $description = $_POST['description'];
@@ -152,8 +153,9 @@ if(isset($_POST['update_product'])){
 
     $images = $_FILES['images']['name'];
 
-    $sql = "UPDATE products SET name='$name', description='$description', brand_id='$brandId', category_id='$category_id', price='$price', model_year='$model_year',
+    $sql = "UPDATE products SET name='$name', description='$description', brand_id='$brand_id', category_id='$category_id', price='$price', model_year='$model_year',
         feature='$feature' WHERE id='$product_id'";    
+
     $query = mysqli_query($connection, $sql);
 
     foreach ($images as $key => $image) {

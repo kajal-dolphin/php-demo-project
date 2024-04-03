@@ -336,7 +336,8 @@ $('#updateProduct').validate({
         var formData = new FormData(form);
         formData.append("update_product", true);
 
-        var description = CKEDITOR.instances['description'].getData();
+        var description = CKEDITOR.instances['editDescription'].getData();
+        console.log(description);
         formData.append("description", description);
 
         $.ajax({

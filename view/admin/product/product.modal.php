@@ -168,7 +168,7 @@
                      <div class="row">
                          <div class="form-group col mb-3">
                              <label><strong>Description :</strong></label>
-                             <textarea class="ckeditor form-control" name="description" height="30" width="30" id="edit_description"></textarea>
+                             <textarea class="ckeditor form-control" name="editDescription" height="30" width="30" id="edit_description"></textarea>
                          </div>
                      </div>
                      <div class="row">
