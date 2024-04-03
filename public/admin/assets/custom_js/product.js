@@ -336,8 +336,7 @@ $('#updateProduct').validate({
         var formData = new FormData(form);
         formData.append("update_product", true);
 
-        var description = CKEDITOR.instances['editDescription'].getData();
-        console.log(description);
+        var description = CKEDITOR.instances['edit_description'].getData();
         formData.append("description", description);
 
         $.ajax({
@@ -349,14 +348,14 @@ $('#updateProduct').validate({
             success: function(response) {
                 var res = jQuery.parseJSON(response);
                 if (res.status == 422) {
-                    $('#errorMessageUpdate').removeClass('d-none');
-                    $('#errorMessageUpdate').text(res.message);
+                    $('#errorMessage').removeClass('d-none');
+                    $('#errorMessage').text(res.message);
 
                 } else if (res.status == 200) {
 
-                    $('#errorMessageUpdate').addClass('d-none');
+                    $('#errorMessage').addClass('d-none');
                     $('#productEditModal').modal('hide');
-                    $('#updateProduct')[0].reset();
+                    $('#saveProduct')[0].reset();
 
                     alertify.set('notifier', 'position', 'top-right');
                     alertify.success(res.message);
@@ -365,14 +364,40 @@ $('#updateProduct').validate({
 
                 } else if (res.status == 500) {
                     alert(res.message);
-                } else if (res.status == 400) {
-                    $('#errorMessageUpdate').removeClass('d-none');
-                    $('#errorMessageUpdate').text(res.message);
-
                 }
             },
             error: function(xhr, status, error) {
                 console.log("in error");
+            }
+        });
+    }
+});
+
+//for delete product 
+$(document).on('click', '.deleteProduct', function(e) {
+    e.preventDefault();
+
+    if (confirm('Are you sure you want to delete this data?')) {
+        var product_id = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "../../../controller/admin/product/product.php",
+            data: {
+                'delete_product': true,
+                'product_id': product_id
+            },
+            success: function(response) {
+
+                var res = jQuery.parseJSON(response);
+                if (res.status == 500) {
+
+                    alert(res.message);
+                } else {
+                    alertify.set('notifier', 'position', 'top-right');
+                    alertify.success(res.message);
+
+                    $('#example').load(location.href + " #example");
+                }
             }
         });
     }
