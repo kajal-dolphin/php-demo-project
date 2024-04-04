@@ -22,12 +22,12 @@
     <div class="wrapper">
         <!--start top header-->
         <header class="top-header">
-            <?php include('../layout/header.php') ?>
+            <?php include_once('../layout/header.php') ?>
         </header>
         <!--end top header-->
 
         <!--start sidebar -->
-        <?php include('../layout/sidebaar.php')  ?>
+        <?php include_once('../layout/sidebaar.php')  ?>
         <!--end sidebar -->
 
         <!--start content-->
@@ -63,7 +63,7 @@
                     <tbody>
                         <?php
 
-                            include('../../../modal/admin/product/product.php');
+                            include_once('../../../modal/admin/product/product.php');
 
                             $obj = new Product();
                             $query = $obj->getProductData();
@@ -94,13 +94,13 @@
         <!--end page main-->
     </div>
 
-    <?php include('./product.modal.php');  ?>
+    <?php include_once('./product.modal.php');  ?>
 
-    <?php include('../layout/foot-link.php');  ?>
+    <?php include_once('../layout/foot-link.php');  ?>
     <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
     <script>
-        <?php  include('../../../public/admin/assets/custom_js/product.js'); ?>
+        <?php  include_once('../../../public/admin/assets/custom_js/product.js'); ?>
     </script>
 
 </body>

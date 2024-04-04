@@ -57,7 +57,7 @@
                     <tbody>
                         <?php
 
-                        include('../../../modal/admin/brand/brand.php');
+                        include_once('../../../modal/admin/brand/brand.php');
 
                         $obj = new Brand();
                         $query = $obj->getBrandData();

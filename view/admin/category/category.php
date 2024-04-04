@@ -56,7 +56,7 @@
                     <tbody>
                         <?php
 
-                            include('../../../modal/admin/category/category.php');
+                            include_once('../../../modal/admin/category/category.php');
 
                             $obj = new Category();
                             $query = $obj->getCategoryData();

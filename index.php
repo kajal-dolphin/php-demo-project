@@ -73,7 +73,7 @@
     <!--end wrapper-->
 
     <?php
-    include('view/admin/layout/foot-link.php');
+    include_once('view/admin/layout/foot-link.php');
     ?>
 
     <script>
