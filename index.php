@@ -109,11 +109,12 @@
                 submitHandler: function(form) {
                     $.ajax({
                         type: "POST",
-                        url: "/e_commorce/controller/admin/auth/signin.php",
+                        url: "/e_commorce/controller/admin/auth/signin.php?action=login",
                         data: $(form).serialize(),
                         success: function(response) {
-                            if (response == "0") {
-                                window.location.href = 'view/admin/layout/dashboard.php';
+                            if (response == 0) {
+                                console.log("here");
+                                window.location.href = '/e_commorce/view/admin/layout/dashboard.php';
                             } else if (response == "1") {
                                 console.log("in 1");
                                 $('#message-container').html('<div class="alert alert-danger">' + "Invalid Credentials !!" + '</div>');

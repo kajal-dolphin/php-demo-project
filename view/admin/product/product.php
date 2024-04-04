@@ -57,20 +57,16 @@
                             <th>Name</th>
                             <th>Brand Name</th>
                             <th>Category Name</th>
-                            <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            include('../../../config/db.php');
 
-                            $sql = "SELECT p.id, p.name as product_name, c.name as category_name, b.name as brand_name
-                                    FROM products AS p
-                                    JOIN brands AS b ON b.id = p.brand_id 
-                                    JOIN categories AS c ON c.id = p.category_id";
+                            include('../../../modal/admin/product/product.php');
 
-                            $query = mysqli_query($connection, $sql);
+                            $obj = new Product();
+                            $query = $obj->getProductData();
 
                             if(mysqli_num_rows($query) > 0){
                                 foreach($query as $key => $product){                                    

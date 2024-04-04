@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include('../layout/head-link.php');
+    include_once('../layout/head-link.php');
     session_start();
     if (!isset($_SESSION['id'])) {
         header("Location: /e_commorce/index.php");
@@ -16,12 +16,12 @@
     <div class="wrapper">
         <!--start top header-->
         <header class="top-header">
-            <?php include('../layout/header.php') ?>
+            <?php include_once('../layout/header.php') ?>
         </header>
         <!--end top header-->
 
         <!--start sidebar -->
-        <?php include('../layout/sidebaar.php')  ?>
+        <?php include_once('../layout/sidebaar.php')  ?>
         <!--end sidebar -->
 
         <!--start content-->
@@ -55,10 +55,11 @@
                     </thead>
                     <tbody>
                         <?php
-                            include('../../../config/db.php');
 
-                            $sql = "SELECT c.id,c.name as category_name, b.name as brand_name from categories AS c JOIN brands AS b ON b.id = c.brand_id ";
-                            $query = mysqli_query($connection, $sql);
+                            include('../../../modal/admin/category/category.php');
+
+                            $obj = new Category();
+                            $query = $obj->getCategoryData();
 
                             if(mysqli_num_rows($query) > 0){
                                 foreach($query as $key => $category){                                    
@@ -84,13 +85,13 @@
         </main>
         <!--end page main-->
     </div>
+    
+    <?php  include_once('./category.modal.php');  ?>
 
-    <?php  include('./category.modal.php');  ?>
-
-    <?php include('../layout/foot-link.php');  ?>
+    <?php include_once('../layout/foot-link.php');  ?>
 
     <script>
-        <?php  include('../../../public/admin/assets/custom_js/category.js'); ?>
+        <?php  include_once('../../../public/admin/assets/custom_js/category.js'); ?>
     </script>
 </body>
 

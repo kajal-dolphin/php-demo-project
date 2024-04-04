@@ -23,9 +23,10 @@
                             <select name="brand_id" class="form-select">
                                 <option value="default">-----select a brand----</option>
                                 <?php
-                                include('../../../config/db.php');
-                                $sql = "SELECT * FROM brands";
-                                $query = mysqli_query($connection, $sql);
+
+                                include_once('../../../modal/admin/brand/brand.php');
+                                $obj = new Brand();
+                                $query = $obj->getBrandData();
 
                                 while ($row = mysqli_fetch_assoc($query)) {
                                     echo "<option value='$row[id]'>$row[name]</option>";
@@ -94,9 +95,10 @@
                             <select name="brand_id" class="form-select editSelectedOption" id="">
                                 <option value="default">-----select a brand----</option>
                                 <?php
-                                include('../../../config/db.php');
-                                $sql = "SELECT * FROM brands";
-                                $query = mysqli_query($connection, $sql);
+
+                                include_once('../../../modal/admin/brand/brand.php');
+                                $obj = new Brand();
+                                $query = $obj->getBrandData();
 
                                 while ($row = mysqli_fetch_assoc($query)) {
                                     echo "<option value='$row[id]'>$row[name]</option>";

@@ -29,9 +29,8 @@ $(document).ready(function() {
         var brand_id = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../../../controller/admin/product/product.php",
+            url: "../../../controller/admin/product/product.php?action=get_category",
             data: {
-                'get_category': true,
                 'brand_id': brand_id
             },
             success: function(response) {
@@ -108,14 +107,14 @@ $(document).ready(function() {
         },
         submitHandler: function(form) {
             var formData = new FormData(form);
-            formData.append("save_product", true);
+            // formData.append("save_product", true);
 
             var description = CKEDITOR.instances['description'].getData();
             formData.append("description", description);
 
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/product/product.php",
+                url: "../../../controller/admin/product/product.php?action=add_product",
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -157,7 +156,7 @@ $(document).on('click', '.viewProduct', function(e) {
     var product_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../../../controller/admin/product/product.php?product_id=" + product_id,
+        url: "../../../controller/admin/product/product.php?product_id=" + product_id + "&action=view_product",
         success: function(response) {
             var res = jQuery.parseJSON(response);
             if (res.status == 404) {
@@ -189,7 +188,7 @@ $(document).on('click', '.editProduct', function(e) {
     var product_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../../../controller/admin/product/product.php?product_id=" + product_id,
+        url: "../../../controller/admin/product/product.php?product_id=" + product_id + "&action=view_product",
         success: function(response) {
             var res = jQuery.parseJSON(response);
             if (res.status == 404) {
@@ -248,10 +247,9 @@ $(document).on('click','.deleteImage', function(e){
     var image_id = $(this).val();
     $.ajax({
         type : "GET",
-        url: "../../../controller/admin/product/product.php",
+        url: "../../../controller/admin/product/product.php?action=delete_image",
         data : {
             image_id : image_id,
-            delete_image : true,
         },
         success: function(response) {
             var res = jQuery.parseJSON(response);
@@ -341,7 +339,7 @@ $('#updateProduct').validate({
 
         $.ajax({
             type: "POST",
-            url: "../../../controller/admin/product/product.php",
+            url: "../../../controller/admin/product/product.php?action=update_product",
             data: formData,
             processData: false,
             contentType: false,
@@ -381,9 +379,8 @@ $(document).on('click', '.deleteProduct', function(e) {
         var product_id = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../../../controller/admin/product/product.php",
+            url: "../../../controller/admin/product/product.php?action=delete_product",
             data: {
-                'delete_product': true,
                 'product_id': product_id
             },
             success: function(response) {

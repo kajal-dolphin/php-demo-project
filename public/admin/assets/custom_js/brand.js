@@ -41,11 +41,11 @@ $(document).ready(function() {
         },
         submitHandler: function(form) {
             var formData = new FormData(form);
-            formData.append("save_brand", true);
-
+            // formData.append("save_brand", true);
+            console.log(formData);
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/brand/brand.php",
+                url: "../../../controller/admin/brand/brand.php?action=add_brand",
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -107,11 +107,11 @@ $(document).ready(function() {
         },
         submitHandler: function(form) {
             var formData = new FormData(form);
-            formData.append("update_brand", true);
+            // formData.append("update_brand", true);
 
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/brand/brand.php",
+                url: "../../../controller/admin/brand/brand.php?action=update_brand",
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -154,7 +154,7 @@ $(document).on('click', '.viewBrand', function(e) {
     var brand_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../../../controller/admin/brand/brand.php?brand_id=" + brand_id,
+        url: "../../../controller/admin/brand/brand.php?brand_id=" + brand_id + "&action=view_brand",
         success: function(response) {
             var res = jQuery.parseJSON(response);
             if (res.status == 404) {
@@ -174,7 +174,7 @@ $(document).on('click', '.editBrand', function(e) {
     var brand_id = $(this).val();
     $.ajax({
         type: "GET",
-        url: "../../../controller/admin/brand/brand.php?brand_id=" + brand_id,
+        url: "../../../controller/admin/brand/brand.php?brand_id=" + brand_id + "&action=view_brand",
         success: function(response) {
             var res = jQuery.parseJSON(response);
             if (res.status == 404) {
@@ -199,7 +199,7 @@ $(document).on('click', '.deleteBrand', function(e) {
         var brand_id = $(this).val();
         $.ajax({
             type: "POST",
-            url: "../../../controller/admin/brand/brand.php",
+            url: "../../../controller/admin/brand/brand.php?action=delete_brand",
             data: {
                 'delete_brand': true,
                 'brand_id': brand_id

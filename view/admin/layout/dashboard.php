@@ -3,7 +3,7 @@
 <html lang="en" class="minimal-theme">
     <head>
         <?php 
-            include('./head-link.php');
+            include_once('./head-link.php');
             session_start();
             if (!isset($_SESSION['id'])) {
                 header("Location: /e_commorce/index.php");
@@ -16,12 +16,12 @@
     <div class="wrapper">
         <!--start top header-->
         <header class="top-header">
-            <?php include('./header.php') ?>
+            <?php include_once('./header.php') ?>
         </header>
         <!--end top header-->
 
         <!--start sidebar -->
-        <?php include('./sidebaar.php')  ?>
+        <?php include_once('./sidebaar.php')  ?>
         <!--end sidebar -->
 
         <!--start content-->
@@ -94,7 +94,7 @@
 
     </div>
 
-    <?php include('./foot-link.php');  ?>
+    <?php include_once('./foot-link.php');  ?>
 
 </body>
 

@@ -3,7 +3,7 @@
 
 <head>
     <?php
-    include('../layout/head-link.php');
+    include_once('../layout/head-link.php');
     session_start();
     if (!isset($_SESSION['id'])) {
         header("Location: /e_commorce/index.php");
@@ -17,12 +17,12 @@
     <div class="wrapper">
         <!--start top header-->
         <header class="top-header">
-            <?php include('../layout/header.php') ?>
+            <?php include_once('../layout/header.php') ?>
         </header>
         <!--end top header-->
 
         <!--start sidebar -->
-        <?php include('../layout/sidebaar.php')  ?>
+        <?php include_once('../layout/sidebaar.php')  ?>
         <!--end sidebar -->
 
         <!--start content-->
@@ -56,10 +56,11 @@
                     </thead>
                     <tbody>
                         <?php
-                        include('../../../config/db.php');
 
-                        $sql = "SELECT * FROM brands";
-                        $query = mysqli_query($connection, $sql);
+                        include('../../../modal/admin/brand/brand.php');
+
+                        $obj = new Brand();
+                        $query = $obj->getBrandData();
 
                         if (mysqli_num_rows($query) > 0) {
                             foreach ($query as $key => $brand) {
@@ -88,12 +89,12 @@
         <!--end page main-->
     </div>
 
-    <?php  include('./brand.modal.php'); ?>
+    <?php  include_once('./brand.modal.php'); ?>
 
-    <?php include('../layout/foot-link.php');  ?>
+    <?php include_once('../layout/foot-link.php');  ?>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
     <script>
-        <?php  include('../../../public/admin/assets/custom_js/brand.js'); ?>
+        <?php  include_once('../../../public/admin/assets/custom_js/brand.js'); ?>
     </script>
 </body>
 

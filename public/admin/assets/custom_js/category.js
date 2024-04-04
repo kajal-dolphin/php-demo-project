@@ -48,7 +48,7 @@ $(document).ready(function() {
 
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/category/category.php",
+                url: "../../../controller/admin/category/category.php?action=add_category",
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -90,7 +90,7 @@ $(document).ready(function() {
         var category_id = $(this).val();
         $.ajax({
             type: "GET",
-            url: "../../../controller/admin/category/category.php?category_id=" + category_id,
+            url: "../../../controller/admin/category/category.php?category_id=" + category_id + "&action=view_category",
             success: function(response) {
                 var res = jQuery.parseJSON(response);
                 if (res.status == 404) {
@@ -110,7 +110,7 @@ $(document).ready(function() {
         var category_id = $(this).val();
         $.ajax({
             type: "GET",
-            url: "../../../controller/admin/category/category.php?category_id=" + category_id,
+            url: "../../../controller/admin/category/category.php?category_id=" + category_id + "&action=view_category",
             success: function(response) {
                 var res = jQuery.parseJSON(response);
                 if (res.status == 404) {
@@ -166,7 +166,7 @@ $(document).ready(function() {
 
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/category/category.php",
+                url: "../../../controller/admin/category/category.php?action=update_category",
                 data: formData,
                 processData: false,
                 contentType: false,
@@ -210,7 +210,7 @@ $(document).ready(function() {
             var category_id = $(this).val();
             $.ajax({
                 type: "POST",
-                url: "../../../controller/admin/category/category.php",
+                url: "../../../controller/admin/category/category.php?action=delete_category",
                 data: {
                     'delete_category': true,
                     'category_id': category_id
