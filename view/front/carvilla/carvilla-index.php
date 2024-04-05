@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-    <?php  include_once('./view/front/layout/head-link.php');  ?>
+    <?php include_once('../../front/layout/head-link.php');  ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
         <!-- top-area Start -->
         <div class="top-area">
             <div class="header-area">
-                <?php  include_once('./view/front/layout/header.php')   ?>
+                <?php include_once('../../front/layout/header.php')   ?>
             </div><!--/.header-area-->
             <div class="clearfix"></div>
 
@@ -200,6 +200,19 @@
             </div><!--/.section-header-->
             <div class="new-cars-content">
                 <div class="owl-carousel owl-theme" id="new-cars-carousel">
+                    <?php
+                        include('../../../modal/admin/product/product.php');
+
+                        $obj = new Product();
+                        $latestCar = $obj->getLatestCar();
+                        $data = mysqli_fetch_all($latestCar, MYSQLI_ASSOC);
+
+                        echo '<pre>';
+                        print_r($data);
+                        echo '</pre>';
+                        exit;
+
+                    ?>
                     <div class="new-cars-item">
                         <div class="single-new-cars-item">
                             <div class="row">
@@ -505,7 +518,7 @@
                             <div class="testimonial-description">
                                 <div class="testimonial-info">
                                     <div class="testimonial-img">
-                                        <img src="assets/images/clients/c1.png" alt="image of clients person" />
+                                        <img src="/e_commorce/public/front/assets/images/clients/c1.png" alt="image of clients person" />
                                     </div><!--/.testimonial-img-->
                                 </div><!--/.testimonial-info-->
                                 <div class="testimonial-comment">
@@ -525,7 +538,7 @@
                             <div class="testimonial-description">
                                 <div class="testimonial-info">
                                     <div class="testimonial-img">
-                                        <img src="assets/images/clients/c2.png" alt="image of clients person" />
+                                        <img src="/e_commorce/public/front/assets/images/clients/c2.png" alt="image of clients person" />
                                     </div><!--/.testimonial-img-->
                                 </div><!--/.testimonial-info-->
                                 <div class="testimonial-comment">
@@ -545,7 +558,7 @@
                             <div class="testimonial-description">
                                 <div class="testimonial-info">
                                     <div class="testimonial-img">
-                                        <img src="assets/images/clients/c3.png" alt="image of clients person" />
+                                        <img src="/e_commorce/public/front/assets/images/clients/c3.png" alt="image of clients person" />
                                     </div><!--/.testimonial-img-->
                                 </div><!--/.testimonial-info-->
                                 <div class="testimonial-comment">
@@ -572,38 +585,25 @@
         <div class="container">
             <div class="brand-area">
                 <div class="owl-carousel owl-theme brand-item">
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br1.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br2.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br3.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br4.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
+                    <?php
 
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br5.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
+                    include_once('../../../modal/admin/brand/brand.php');
 
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/images/brand/br6.png" alt="brand-image" />
-                        </a>
-                    </div><!--/.item-->
+                    $obj = new Brand();
+                    $query = $obj->getBrandData();
+
+                    if (mysqli_num_rows($query) > 0) {
+                        foreach ($query as $key => $brand) {
+                    ?>
+                        <div class="item">
+                            <a href="#">
+                            <img src='../../../public/admin/assets/images/brand/<?= $brand['image'] ?>' width="100" height="100" />
+                            </a>
+                        </div>
+                    <?php
+                        }
+                    }
+                    ?>
                 </div><!--/.owl-carousel-->
             </div><!--/.clients-area-->
 
@@ -617,10 +617,10 @@
     <!--blog end -->
 
     <!--contact start-->
-    <?php  include_once('./view/front/layout/footer.php')  ?>
+    <?php include_once('../../front/layout/footer.php')  ?>
     <!--contact end-->
 
-    <?php include_once('./view/front/layout/foot-link.php'); ?>
+    <?php include_once('../../front/layout/foot-link.php'); ?>
 
 </body>
 

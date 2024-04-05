@@ -277,4 +277,11 @@ class Product extends Connection
         $query = mysqli_query($this->connection, $sql);
         return $query;
     }
+
+    public function getLatestCar()
+    {
+        $sql = "SELECT p.id, p.name, p.description, pi.image FROM products AS p JOIN product_images as pi ON pi.product_id = p.id";
+        $query = mysqli_query($this->connection, $sql);
+        return $query;
+    }
 }
